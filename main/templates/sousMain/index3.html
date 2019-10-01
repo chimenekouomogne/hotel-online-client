@@ -1,0 +1,10 @@
+{% extends "layouts/parent.html" %}
+{% block title %} page temple {% endblock %}
+{% block content %}
+<article>
+	{% for elt in regis %}
+		<h2>l'identifiant {{ elt.id }} a pour titre <a href="sonia"> {{ elt.titre|upper }} </a> et valeur " {{ elt.corps }} "</h2>
+		
+	{% endfor %}
+</article>	
+{% endblock %}

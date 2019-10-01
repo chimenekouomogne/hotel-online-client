@@ -1,0 +1,130 @@
+{% extends "hotel/blankHotel.html" %}
+
+{% block centre %}
+  <br><br>
+  
+  <form class="col-xs-12 col-md-10 modif2" action="{% url 'main:reservation' %}" method="post" accept-charset="utf-8" align="center">
+    {% csrf_token %}
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="nom"> votre nom </label>
+        <input type="text" placeholder="nom" class="form-control" name="nom">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" id="email" placeholder="name@example.com">
+      </div>
+    </div>
+
+    <br>
+    <div class="form-row"><label for="champservice">Veuillez cocher ci-dessous les services sollicités : </label></div>
+    <div class="form-row">      
+      <div class="form-check col-md-3">
+        <input class="form-check-input" type="checkbox" id="gridCheck" checked="">
+        <label class="form-check-label" for="gridCheck">
+         Hebergement
+      </div>
+      <div class="form-check col-md-3">
+        <input class="form-check-input" type="checkbox" id="gridCheck">
+        <label class="form-check-label" for="gridCheck">
+         Restauration
+      </div>
+       <div class="form-check col-md-3">
+        <input class="form-check-input" type="checkbox" id="gridCheck">
+        <label class="form-check-label" for="gridCheck">
+         Piscine
+      </div>
+      <div class="form-check col-md-3">
+        <input class="form-check-input" type="checkbox" id="gridCheck">
+        <label class="form-check-label" for="gridCheck">
+         Discothèque
+    </div>
+    </div>
+
+    <br>
+
+    <fieldset>
+      <div class="form-row">
+        <div class="form-group col-md-4">
+        <label for="nom"> code de chambre</label>
+        <input type="text" placeholder="code" class="form-control" name="nom">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="nom"> prix horaire </label>
+        <input type="text" placeholder="prix" class="form-control" name="nom">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="nom"> Durée </label>
+        <select class="form-control" id="Duree">
+      <option>Horaire</option>
+      <option>Nuité</option>
+      <option>semaine</option>
+      <option>plus</option>
+    </select>
+      </div>
+      </div>
+    </fieldset>
+
+    <fieldset disabled="">
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="nom"> code piscine</label>
+          <input type="text" placeholder="code" class="form-control" name="nom">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="nom"> prix horaire </label>
+          <input type="text" placeholder="prix" class="form-control" name="nom">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="nom"> Durée </label>
+          <select class="form-control" id="Duree">
+            <option>Horaire</option>
+            <option>jour</option>
+            <option>semaine</option>
+            <option>plus</option>
+          </select>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset disabled="">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="nom"> type menu </label>
+          <select class="form-control" id="typeMenu">
+            <option>Standard</option>
+            <option>Mixte</option>
+            <option>Complet</option>
+          </select>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="prixMenu"> Prix </label>
+          <input type="text" placeholder="prix" class="form-control" name="prixMenu">
+        </div>
+      </div>
+    </fieldset>
+    
+    <button class="btn btn-info" type="submit">Valider</button>
+
+  </div>
+
+
+   <div>
+     
+   </div>
+  
+   
+    
+  </form>      
+    <!-- <span class="input-group-btn">
+        <button class="btn btn-info" type="submit">Valider</button>
+       <a class="btn btn-info" href="{% url 'main:recherche' %}">rechercher</a> 
+    </span> -->
+
+   
+          
+ 
+
+ <!--  {% include 'hotelBloc/form_recherche.html'%} -->
+
+{% endblock %}

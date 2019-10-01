@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<HTML lang='en'>
+   <HEAD>
+      <meta charset="UTF-8"/>
+      <link rel="stylesheet" href="{% static 'style.css' %}"/>
+      <TITLE>{% block title %} MA PAGE WEB {% endblock %}</TITLE>
+   </HEAD>
+   <BODY>
+      
+
+         <header> voici le travail
+     
+          <nav>
+            {% block nav %}
+               <ul>
+                  <li> <a href="#"> Accueil </a></li>
+                  <li><a href="#"> blog </a></li>
+                  <li><a href="#"> contact </a></li>
+               </ul>
+            {% endblock %}
+          </nav>
+         </header>
+
+         <section>
+            {% block section1 %}
+            <aside>
+             <h1>voici un bloc aside </h1>
+               <div id="sidebar">
+                  voici un bloc div dans aside
+               </div> 
+            </aside>
+            {% endblock %}
+
+            <article>
+               {% block article %}
+               <p> voici un article </p> 
+               {% endblock %}
+            </article>
+         </section>
+
+         <footer>
+            {% block footer %}
+
+            <p> voici le pieds de page 
+               <a href="#">lien vers une page </a>
+             </p>
+            {% endblock %}
+         </footer>
+
+      
+   </BODY>
+</HTML> 

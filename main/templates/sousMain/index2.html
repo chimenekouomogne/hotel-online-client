@@ -1,0 +1,15 @@
+{% extends "layouts/parent3.html" %}
+{% block title %} page index2 {% endblock %}
+{% block ligne1 %}
+<p>La date actuelle est : {{ moi }} </p>
+<ul>
+	{% for code, nom in moi.items %}
+		<li style="color:#{{ code }}">{{ nom }} </li>
+	{% endfor %}
+</ul>	
+<ul>
+	{% for elt in toi %}
+		<li>{{ elt }}</li>
+	{% endfor %}
+</ul>	
+{% endblock %}

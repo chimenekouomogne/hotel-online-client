@@ -1,0 +1,473 @@
+
+
+    {% extends "sb_admin/blank.html" %}
+
+
+    {% block style%}
+
+    <style>
+        .box-content{
+          margin: 5% 3%;
+        }
+      </style>
+     {% endblock%}
+
+    {% block contenair %}
+
+
+     <!-- start: Content -->
+                <div id="content" class="col-md-12">
+
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Administration</a></li>
+                            <li class="breadcrumb-item"><a href="http://localhost:8080/admin/personnels">personnels</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Nouveau personnel</li>
+                        </ol>
+                    </nav>
+                <div class="row-fluid sortable">
+                <div class="box span12">
+                    <!--<div class="box-header" data-original-title>-->
+                        <!--<h2><i class="halflings-icon edit"></i><span class="break"></span>Ajout d'un nouveau personnel</h2>-->
+                        <!--<div class="box-icon">-->
+                            <!--<a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>-->
+                            <!--<a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>-->
+                            <!--<a href="#" class="btn-close"><i class="halflings-icon remove"></i></a>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <div class="box-content">
+
+                        <form action="/admin/personnels/ajouter-personnel" method="post">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="nom">Nom</label>
+                                    <input type="text" class="form-control" id="nom" placeholder="Nom" name="nom">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="prenom">Prénom</label>
+                                    <input type="text" class="form-control" id="prenom" placeholder="prenom" name="prenom">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Email" name="email">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="fonction">Fonction</label>
+                                    <input type="text" class="form-control" id="fonction" placeholder="fonction" name="fonction">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="numero_cni">Numéro CNI </label>
+                                    <input type="text" class="form-control typeahead" id="numero_cni" name="numero_cni">
+                                </div>
+                            </div>
+                            <!--adresse et contact -->
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="telephone1">Téléphone 1</label>
+                                    <input type="text" class="form-control" id="telephone1" placeholder="tel 1" name="telephone_1">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="telephone2">Téléphone 2</label>
+                                    <input type="text" class="form-control" id="telephone2" placeholder="tel 2" name="telephone_2">
+                                </div>
+
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label for="telephone2">Sexe</label>
+                                    <select id="sexe" data-rel="chosen" class="form-control" name="sexe">
+                                        <option value="M" selected="selected">Homme</option>
+                                        <option value="F">Femme</option>
+                                        <option value="A">Autre</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="date_naissance">Date de naissance</label>
+                                    <input type="text" class="form-control span6 typeahead input-xlarge datepicker" id="date_naissance" name="date_naissance">
+                                </div>
+
+                                <div class="form-group col-md-4">
+                                    <label for="lieu_naissance">Lieu naissance<span class="text-danger">*</span> </label>
+                                    <div class="controls">
+                                        <input type="text" class="span6 typeahead" id="lieu_naissance" list="subdivision_list" autocomplete="off" name="lieu_naissance">
+                                        <datalist id="subdivision_list">
+                                            <option value="Nlonako"></option>
+                                            <option value="Loum"></option>
+                                            <option value="Manjo"></option>
+                                            <option value="Garoua 3"></option>
+                                            <option value="Mbanga"></option>
+                                            <option value="Mombo"></option>
+                                            <option value="Mélong"></option>
+                                            <option value="Massok"></option>
+                                            <option value="Ndoukoula"></option>
+                                            <option value="Blangoua"></option>
+                                            <option value="Darrak"></option>
+                                            <option value="Fotokol"></option>
+                                            <option value="Goulfey"></option>
+                                            <option value="Hilé - Halifa"></option>
+                                            <option value="Kousseri"></option>
+                                            <option value="Maga"></option>
+                                            <option value="Bétaré Oya"></option>
+                                            <option value="Garoua Boulaé"></option>
+                                            <option value="Mandjou"></option>
+                                            <option value="Ngoura"></option>
+                                            <option value="Maroua 1"></option>
+                                            <option value="Maroua 2"></option>
+                                            <option value="Maroua 3"></option>
+                                            <option value="Méri"></option>
+                                            <option value="Wina"></option>
+                                            <option value="Yagoua"></option>
+                                            <option value="Guidiguis"></option>
+                                            <option value="Kaélé"></option>
+                                            <option value="Mindif"></option>
+                                            <option value="Moulvoudaye"></option>
+                                            <option value="Moutourwa"></option>
+                                            <option value="Porhi"></option>
+                                            <option value="Logone Birni"></option>
+                                            <option value="Zina"></option>
+                                            <option value="Datchéka"></option>
+                                            <option value="Gobo"></option>
+                                            <option value="Makary"></option>
+                                            <option value="Waza"></option>
+                                            <option value="Guéré"></option>
+                                            <option value="Vélé"></option>
+                                            <option value="Njinikom"></option>
+                                            <option value="Jakiri"></option>
+                                            <option value="Kumbo"></option>
+                                            <option value="Bamenda 2"></option>
+                                            <option value="Bamenda 3"></option>
+                                            <option value="Mbven"></option>
+                                            <option value="Nkum"></option>
+                                            <option value="Noni"></option>
+                                            <option value="Touboro"></option>
+                                            <option value="Figuil"></option>
+                                            <option value="Ngie"></option>
+                                            <option value="Guider"></option>
+                                            <option value="Mayo-Oulo"></option>
+                                            <option value="Belo"></option>
+                                            <option value="Fundong"></option>
+                                            <option value="Bum"></option>
+                                            <option value="Nwa"></option>
+                                            <option value="Fungom"></option>
+                                            <option value="Dschang"></option>
+                                            <option value="Furu Awa"></option>
+                                            <option value="Menchum Valley"></option>
+                                            <option value="Wum"></option>
+                                            <option value="Batibo"></option>
+                                            <option value="Bafut"></option>
+                                            <option value="Oku"></option>
+                                            <option value="Batié"></option>
+                                            <option value="Ako"></option>
+                                            <option value="Santa"></option>
+                                            <option value="Misaje"></option>
+                                            <option value="Ndu"></option>
+                                            <option value="Tubah"></option>
+                                            <option value="Nkambe"></option>
+                                            <option value="Ndom"></option>
+                                            <option value="Douala 3"></option>
+                                            <option value="Ngambé"></option>
+                                            <option value="Nyanon"></option>
+                                            <option value="Pouma"></option>
+                                            <option value="Douala 1"></option>
+                                            <option value="Douala 4"></option>
+                                            <option value="Douala 5"></option>
+                                            <option value="Edéa 1"></option>
+                                            <option value="Yabassi"></option>
+                                            <option value="Yingui"></option>
+                                            <option value="Edéa 2"></option>
+                                            <option value="Logbadjeck"></option>
+                                            <option value="Makondo"></option>
+                                            <option value="Douala 2"></option>
+                                            <option value="Mouanko"></option>
+                                            <option value="Tcheboa"></option>
+                                            <option value="Touroua"></option>
+                                            <option value="Mbengwi"></option>
+                                            <option value="Béka"></option>
+                                            <option value="Poli"></option>
+                                            <option value="Madingring"></option>
+                                            <option value="Rey-Bouba"></option>
+                                            <option value="Tcholliré"></option>
+                                            <option value="Manoka"></option>
+                                            <option value="Bachéo"></option>
+                                            <option value="Bardanké"></option>
+                                            <option value="Gachiga"></option>
+                                            <option value="Bibemi"></option>
+                                            <option value="Dembo"></option>
+                                            <option value="Lagdo"></option>
+                                            <option value="Pitoa"></option>
+                                            <option value="Ebebda"></option>
+                                            <option value="Lobo"></option>
+                                            <option value="Monatélé"></option>
+                                            <option value="Obala"></option>
+                                            <option value="Ngambé-Tikar"></option>
+                                            <option value="Okola"></option>
+                                            <option value="Sa'a"></option>
+                                            <option value="Bafia"></option>
+                                            <option value="Mbandjock"></option>
+                                            <option value="Minta"></option>
+                                            <option value="Elig-Mfomo"></option>
+                                            <option value="Evodoula"></option>
+                                            <option value="Nanga-Eboko"></option>
+                                            <option value="Nkoteng"></option>
+                                            <option value="Nsem"></option>
+                                            <option value="Batchenga"></option>
+                                            <option value="Ndikinimeki"></option>
+                                            <option value="Nitoukou"></option>
+                                            <option value="Ombessa"></option>
+                                            <option value="Mbangassina"></option>
+                                            <option value="Yoko"></option>
+                                            <option value="Afanloum"></option>
+                                            <option value="Mengueme"></option>
+                                            <option value="Awaé"></option>
+                                            <option value="Bokito"></option>
+                                            <option value="Deuk"></option>
+                                            <option value="Kikki"></option>
+                                            <option value="Kom-Yambette"></option>
+                                            <option value="Ngoro"></option>
+                                            <option value="Makenene"></option>
+                                            <option value="Ntui"></option>
+                                            <option value="Gazawa"></option>
+                                            <option value="Tignére"></option>
+                                            <option value="Ngaoundéré 3"></option>
+                                            <option value="Nyambaka"></option>
+                                            <option value="Bankim"></option>
+                                            <option value="Banyo"></option>
+                                            <option value="Mayo-Darley"></option>
+                                            <option value="Dir"></option>
+                                            <option value="Djohong"></option>
+                                            <option value="Ngaoundal"></option>
+                                            <option value="Tibati"></option>
+                                            <option value="Yaoundé 3"></option>
+                                            <option value="Tchatibali"></option>
+                                            <option value="Galim-Tignére"></option>
+                                            <option value="Kontcha"></option>
+                                            <option value="Ngaoundéré 2"></option>
+                                            <option value="Mayo-Baléo"></option>
+                                            <option value="Nganha"></option>
+                                            <option value="Ngaoundéré 1"></option>
+                                            <option value="Yaoundé 4"></option>
+                                            <option value="Yaoundé 5"></option>
+                                            <option value="Yaoundé 6"></option>
+                                            <option value="Yaoundé 7"></option>
+                                            <option value="Bibé"></option>
+                                            <option value="Lembe"></option>
+                                            <option value="Kai-Kai"></option>
+                                            <option value="Meiganga"></option>
+                                            <option value="Ngaoui"></option>
+                                            <option value="Yaoundé 1"></option>
+                                            <option value="Yaoundé 2"></option>
+                                            <option value="Bélél"></option>
+                                            <option value="Martap"></option>
+                                            <option value="Mbé"></option>
+                                            <option value="Doumetang"></option>
+                                            <option value="Doumé"></option>
+                                            <option value="Messok"></option>
+                                            <option value="Lomié"></option>
+                                            <option value="Messaména"></option>
+                                            <option value="Mindourou"></option>
+                                            <option value="Ngoila"></option>
+                                            <option value="Nguelemendouka"></option>
+                                            <option value="Atok"></option>
+                                            <option value="Moloundou"></option>
+                                            <option value="Salapoumbé"></option>
+                                            <option value="Dimako"></option>
+                                            <option value="Yokadouma"></option>
+                                            <option value="Mboma"></option>
+                                            <option value="Abong Mbang"></option>
+                                            <option value="Angossas"></option>
+                                            <option value="Mbang"></option>
+                                            <option value="Dargala"></option>
+                                            <option value="Ndélélé"></option>
+                                            <option value="Nguélébok"></option>
+                                            <option value="Belabo"></option>
+                                            <option value="Bertoua 1"></option>
+                                            <option value="Bertoua 2"></option>
+                                            <option value="Diang"></option>
+                                            <option value="Somalomo"></option>
+                                            <option value="Mbotoro"></option>
+                                            <option value="Kalfou"></option>
+                                            <option value="Batouri"></option>
+                                            <option value="Bogo"></option>
+                                            <option value="Kentzou"></option>
+                                            <option value="Kétté"></option>
+                                            <option value="Kar-Hay"></option>
+                                            <option value="Mbankomo"></option>
+                                            <option value="Dibang"></option>
+                                            <option value="Ngoumou"></option>
+                                            <option value="Biyouha"></option>
+                                            <option value="Bondjock"></option>
+                                            <option value="Bot-Makak"></option>
+                                            <option value="Petté"></option>
+                                            <option value="Eséka"></option>
+                                            <option value="Edzendoum"></option>
+                                            <option value="Esse"></option>
+                                            <option value="Mfou"></option>
+                                            <option value="Akono"></option>
+                                            <option value="Nkolafamba"></option>
+                                            <option value="Olanguina"></option>
+                                            <option value="Soa"></option>
+                                            <option value="Bikok"></option>
+                                            <option value="Kobdombo"></option>
+                                            <option value="Mengang"></option>
+                                            <option value="Akoeman"></option>
+                                            <option value="Dzeng"></option>
+                                            <option value="Mbalmayo"></option>
+                                            <option value="Ngomedzap"></option>
+                                            <option value="Nkolmetet"></option>
+                                            <option value="Gari-Gombo"></option>
+                                            <option value="Makak"></option>
+                                            <option value="Matomb"></option>
+                                            <option value="Messondo"></option>
+                                            <option value="Ngog-Mapubi"></option>
+                                            <option value="Nguibassal"></option>
+                                            <option value="Endom"></option>
+                                            <option value="Akonolinga"></option>
+                                            <option value="Ayos"></option>
+                                            <option value="Foumbot"></option>
+                                            <option value="Limbe 1"></option>
+                                            <option value="Kouoptamo"></option>
+                                            <option value="Bengbis"></option>
+                                            <option value="Koutaba"></option>
+                                            <option value="Magba"></option>
+                                            <option value="Malantouen"></option>
+                                            <option value="Massangam"></option>
+                                            <option value="Bangangté"></option>
+                                            <option value="Bazou"></option>
+                                            <option value="Tonga"></option>
+                                            <option value="Bangourain"></option>
+                                            <option value="Buea"></option>
+                                            <option value="Djimon"></option>
+                                            <option value="Foumban"></option>
+                                            <option value="Idenau"></option>
+                                            <option value="Biwong-Bane"></option>
+                                            <option value="Biwong-Bulu"></option>
+                                            <option value="Mvangan"></option>
+                                            <option value="Ebolowa 1"></option>
+                                            <option value="Ngoulemakong"></option>
+                                            <option value="Ebolowa 2"></option>
+                                            <option value="Niété"></option>
+                                            <option value="Efoulan"></option>
+                                            <option value="Limbe 2"></option>
+                                            <option value="Djoum"></option>
+                                            <option value="Meyomessala"></option>
+                                            <option value="Meyomessi"></option>
+                                            <option value="Mintom"></option>
+                                            <option value="Oveng"></option>
+                                            <option value="Sangmelima"></option>
+                                            <option value="Zoétélé"></option>
+                                            <option value="Bakou"></option>
+                                            <option value="Galim"></option>
+                                            <option value="Bana"></option>
+                                            <option value="Mbouda"></option>
+                                            <option value="Bafang"></option>
+                                            <option value="Bandja"></option>
+                                            <option value="Banka"></option>
+                                            <option value="Banwa"></option>
+                                            <option value="Bali"></option>
+                                            <option value="Bamenda 1"></option>
+                                            <option value="Njikwa"></option>
+                                            <option value="Widikum-Menka"></option>
+                                            <option value="Babessi"></option>
+                                            <option value="Balikumbat"></option>
+                                            <option value="Babadjou"></option>
+                                            <option value="Batcham"></option>
+                                            <option value="Fonfoué"></option>
+                                            <option value="Fongo-Tongo"></option>
+                                            <option value="Baleng"></option>
+                                            <option value="Bamougoum"></option>
+                                            <option value="Kong-ni"></option>
+                                            <option value="Penka-Michel"></option>
+                                            <option value="Olamzé"></option>
+                                            <option value="Santchou"></option>
+                                            <option value="Kékem"></option>
+                                            <option value="Baham"></option>
+                                            <option value="Bamendjou"></option>
+                                            <option value="Bangou"></option>
+                                            <option value="Bandjoum"></option>
+                                            <option value="Bayagam"></option>
+                                            <option value="Djebem"></option>
+                                            <option value="Bafoussam 1"></option>
+                                            <option value="Kombo Abedimo"></option>
+                                            <option value="Bamusso"></option>
+                                            <option value="Ekondo Titi"></option>
+                                            <option value="Idabato"></option>
+                                            <option value="Kombo Itindi"></option>
+                                            <option value="Toko"></option>
+                                            <option value="Mundemba"></option>
+                                            <option value="Lolodorf"></option>
+                                            <option value="Mvengue"></option>
+                                            <option value="Ambam"></option>
+                                            <option value="Ma'an"></option>
+                                            <option value="Limbe 3"></option>
+                                            <option value="Muyuka"></option>
+                                            <option value="Alou"></option>
+                                            <option value="Tiko"></option>
+                                            <option value="Mengong"></option>
+                                            <option value="Kyé Ossi"></option>
+                                            <option value="Akom II"></option>
+                                            <option value="Bipindi"></option>
+                                            <option value="Campo"></option>
+                                            <option value="Kribi 1"></option>
+                                            <option value="Kribi 2"></option>
+                                            <option value="Lokoundje"></option>
+                                            <option value="Mamfe"></option>
+                                            <option value="Konye"></option>
+                                            <option value="Kumba 1"></option>
+                                            <option value="Kumba 2"></option>
+                                            <option value="Isangele"></option>
+                                            <option value="Kumba 3"></option>
+                                            <option value="Dikoume-Balue"></option>
+                                            <option value="Mbonge"></option>
+                                            <option value="Fontem"></option>
+                                            <option value="Bangem"></option>
+                                            <option value="Nguti"></option>
+                                            <option value="Tombel"></option>
+                                            <option value="Wabane"></option>
+                                            <option value="Akwaya"></option>
+                                            <option value="Upper Bayang"></option>
+                                            <option value="Eyumojock"></option>
+                                            <option value="Mayo Moskota"></option>
+                                            <option value="Mogodé"></option>
+                                            <option value="Mokolo"></option>
+                                            <option value="Soulédé Roua"></option>
+                                            <option value="Baré-Bakem"></option>
+                                            <option value="Garoua 2"></option>
+                                            <option value="Bonaléa"></option>
+                                            <option value="Dibombari"></option>
+                                            <option value="Taibong"></option>
+                                            <option value="Kolofata"></option>
+                                            <option value="Mora"></option>
+                                            <option value="Tokombéré"></option>
+                                            <option value="Garoua 1"></option>
+                                            <option value="Bourrha"></option>
+                                            <option value="Hina"></option>
+                                            <option value="Koza"></option>
+                                            <option value="Njombé-Penja"></option>
+                                            <option value="Nkongsamba 1"></option>
+                                            <option value="Nkongsamba 2"></option>
+                                            <option value="Nkongsamba 3"></option>
+                                            <option value="Ndop"></option>
+                                            <option value="Ndobian"></option>
+                                            <option value="Dizangué"></option>
+                                            <option value="Nkondjock"></option>
+
+                                        </datalist>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enregistrer</button>
+                        </form>
+                    </div>
+                </div><!--/span-->
+            </div><!--/row-->
+            <div class="clearfix"></div>
+        </div>
+        <!-- end: Content -->  
+
+    {% endblock %}

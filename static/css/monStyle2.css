@@ -1,0 +1,126 @@
+.marge{margin: 10px;}
+
+#nav-barrr li a{
+      		text-decoration: none !important;
+      		color: black;
+      		display: inline-block;
+      		margin: 10px;
+      	}
+
+navb
+{
+	display: inline-block;
+}
+
+.logo
+{
+	height: 50px;
+	width: 50px;
+	
+}
+
+ul li
+{
+	display: inline-block;
+}
+
+article aside
+{
+	display: inline-block;
+}
+
+.img_a
+{
+	height: 300px;
+	min-width: 200px;
+	border-radius: 8px;
+	box-shadow: 6px 6px 6px;
+	margin: 20px;
+
+}
+
+
+.floter
+{
+	float: left;
+} 
+
+.banniere
+{
+	background: url("../assets/images/facade.jpg");
+	background-attachment: fixed;
+	background-position: center; 
+	min-height: 200px;
+	box-shadow: 
+}
+
+.modif
+{
+	background-color: rgb(202,255,255);
+	min-height: 200px;
+}
+.modif2
+{
+	background-color: rgb(207,207,207); 
+	min-height: 200px;
+}
+
+
+.footer
+{
+	min-height: 300px;
+	/*position: absolute;
+	bottom: 0px;
+	left: 0px;*/
+}
+
+.section3
+{
+	min-height: 200px;
+	background-color: rgb(207,207,207); 
+}
+
+.pied1
+{
+	min-height: 200px;
+}
+
+.pied2
+{
+	min-height: 50px;
+}
+
+/* formatage de texte */
+
+.format
+{
+	font-family: Arial Black;
+	padding: 12px;
+	margin: 15px;
+	color: rgb(125,125,125);
+	display: inline;
+
+}
+
+#hist1,#hist2,#hist3,#hist4
+{
+	display: inline-block;
+	
+}
+
+aside p 
+{
+	background-color: rgb(232,230,231);
+
+}
+
+article p
+{
+	background-color: rgb(232,230,231);
+}
+
+.taille
+{
+	max-height: 200px;
+	
+}

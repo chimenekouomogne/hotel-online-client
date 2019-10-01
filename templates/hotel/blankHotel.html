@@ -1,0 +1,294 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<HTML lang='en'>
+   <HEAD>
+      <meta charset="UTF-8" name="viewport" content="width=device-width; initial-scale=1">
+      <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+      <link rel="stylesheet" href="{% static 'css/monStyle2.css' %}"/>
+      <!--<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css">--> 
+      
+     <!-- <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script> -->
+       
+      
+
+      <TITLE> HOTEL-ONLINE </TITLE>
+   </HEAD>
+   <body>
+   	<nav class="navbar navbar-default row">
+         
+            <div class="col-xs-12 col-md-2">
+               <img src="{% static 'assets/images/logo.jpg' %}" alt="logo_site" class="rounded-circle logo">
+            </div>
+            <div class="col-xs-12 col-md-6">
+         		<ul>
+         			<li><a class="btn btn-info" href="{% url 'main:indexHotel' %}">ACCUEIL</a></li>
+         			<li><a class="btn btn-info" href="{% url 'main:hotels' %}">HOTELS</a></li>
+              <li><a class="btn btn-info" href="{% url 'main:reservation' %}">RESERVATION</a></li>
+         			<li><a class="btn btn-info" href="{% url 'main:contacts' %}">CONTACT</a></li>
+              <li><a class="btn btn-info" href="{% url 'main:historique' %}">HISTORIQUE</a></li>
+         		</ul>
+            </div>     
+            <form class="input-group col-xs-12 col-md-4" action="{% url 'main:recherche' %}" method="get" accept-charset="utf-8">
+              {% csrf_token %}
+                  <input type="text" placeholder="service solicité" class="input-sm form-control" name="query">
+              <span class="input-group-btn">
+                  <button class="btn btn-info" type="submit">rechercher</button>
+                  <!-- <a class="btn btn-info" href="{% url 'main:recherche' %}">rechercher</a> -->
+              </span>
+            </form>              
+         
+   	</nav>
+
+   	<header class="container-fluid banniere">
+         <h1 align="center">HOTEL-ONLINE</h1>
+   		<!--<img src="assets/images/piscine.jpg" alt="une piscine">-->
+         <!--<img src="assets/images/chambre.jpg" alt="une piscine">-->
+   	</header>
+   	<section>
+   		<div class="row">
+   			<div class="col-sm-12 col-md-4 col-lg-4">
+                  				
+               
+               <div class="marge modif2">
+                 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                          <img src="{% static 'assets/images/chambre.jpg' %}" class="d-block w-100 " alt="chambre">
+                      </div>
+                      <div class="carousel-item ">
+                        <img src="{% static 'assets/images/suite.jpg' %}" class="d-block w-100 taille" alt="suite">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="{% static 'assets/images/salon.jpg' %}" class="d-block w-100 taille" alt="piscine">
+                      </div>
+                    </div>
+
+                  </div>
+                 </div>
+
+
+               
+
+
+               <form class="marge modif2">
+                  <h3 align="center"> FILTRE DE RECHERCHE</h3>
+                  <div class="form-row">
+                     <div class="form-group col-md-5">
+                        <label for="logement">type de loge</label>
+                        <select id="logement" class="form-control">
+                          <option selected> 5 ETOILES</option>
+                          <option>4 ETOILES</option>
+                          <option>3 ETOILES</option>
+                          <option>2 ETOILES</option>
+                        </select>
+                     </div>
+                     <div class="form-group col-md-5">
+                        <label for="localite">Localité</label>
+                        <input type="text" class="form-control" id="localite" placeholder="Quartier">
+                     </div>
+                  </div>
+
+                  <div data-role="rangeslider">
+                     <label for="prix-min"> prix</label>
+                     <input type="range" name="prix-min" id="prix-min" value="500" min="0" max="1000">
+                     <label for="prix-max"> prix</label>
+                     <input type="range" name="prix-max" id="prix-max" value="500" min="0" max="1000">
+                     
+                  </div>
+
+                  <button type="submit" class="btn btn-info"> Filtrer</button>
+               </form>
+
+
+          
+      	</div>
+            <div class="col-md-8 col-lg-8 col-sm-12">
+        {% block centre %}
+        
+              {% block accueil %} 
+              <br>
+               <h3 align="center"> ZOOM SUR QUELQUES HOTELS </h3> 
+                <div class="row col-md-10 col-lg-10 col-sm-12">
+               
+               <div class="card-group">
+                 <div class="card marge text-white bg-secondary">
+                   <img src="{% static 'assets/images/piscine.jpg' %}" class="card-img-top" alt="">
+                   <div class="card-body">
+                     <h5 class="card-title">TALOTEL</h5>
+                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                   </div>
+                 </div>
+                 <div class="card marge">
+                   <img src="{% static 'assets/images/suite.jpg' %}" class="card-img-top" alt="...">
+                   <div class="card-body">
+                     <h5 class="card-title">TECLAIR HOTEL</h5>
+                     <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                   </div>
+                 </div>
+                 <div class="card marge text-white bg-secondary">
+                   <img src="{% static 'assets/images/chambre.jpg' %}" class="card-img-top" alt="...">
+                   <div class="card-body">
+                     <h5 class="card-title">MBOUOH PALACE</h5>
+                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                   </div>
+                 </div>
+               </div>
+            </div>
+            {% endblock %}
+
+
+               <div class="row col-md-10">
+                  
+                     <div class="card text-black modif2 mb-3" style="min-width: 600px; min-height: 300px; margin:20px;;">
+                       <div class="row no-gutters">
+                         <div class="col-md-4">
+                           <img src="{% static 'assets/images/piscine.jpg' %}" class="card-img" alt="...">
+                         </div>
+                         <div class="col-md-4">
+                           <div class="card-body">
+                             <h5 class="card-title">TALOTEL</h5>
+                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                           </div>
+                         </div>
+                       </div>
+                     </div>
+  
+               </div>
+
+               
+               <div class="row col-md-10">
+                  
+                     <div class="card text-white bg-secondary mb-3 marge" style="min-width: 600px; min-height: 300px;">
+                       <div class="row no-gutters">
+                         <div class="col-md-4">
+                           <img src="{% static 'assets/images/chambre.jpg' %}" class="card-img" alt="...">
+                         </div>
+                         <div class="col-md-4">
+                           <div class="card-body">
+                             <h5 class="card-title">TECLAIR HOTEL</h5>
+                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                           </div>
+                         </div> 
+                       </div>
+                     </div>     
+
+
+            </div>
+
+            <div class="card mb-3 marge" style="min-width: 540px;">
+                 <div class="row no-gutters">
+                   <div class="col-md-4">
+                     <img src="assets/images/piscine.jpg." class="card-img" alt="...">
+                   </div>
+                   <div class="col-md-8">
+                     <div class="card-body">
+                       <h5 class="card-title">METEO HOTEL</h5>
+                       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                       <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                     </div>
+                   </div>
+                 </div>
+            </div>
+
+        {% endblock %}    
+         <!--      <div class="col-md-4 floter"><img src="assets/images/piscine.jpg" alt="une piscine" class="img_a">
+                  TECLAIR HOTEL
+               </div>
+               <div class="col-md-4"><img src="assets/images/chambre.jpg" alt="une chambre" class="img_a">
+                  TECLAIR HOTEL
+               </div>              
+      --> 
+
+   			
+   		</div>
+   		<!-- <section>
+   			<article class="row">
+   				<div class="col-md-3">
+   					<P>
+   						<h2> infos</h2>
+   						<br> confort
+   						<br> fiabilite
+   						<br> satisfaction
+   					</P>
+   				</div>
+   				<div class="col-md-3">
+   					<P>
+   						<h2> infos</h2>
+   						<br> confort
+   						<br> fiabilite
+   						<br> satisfaction
+   					</P>
+   				</div>
+   				<div class="col-md-3">
+   					<P>
+   						<h2> infos</h2>
+   						<br> confort
+   						<br> fiabilite
+   						<br> satisfaction
+   					</P>
+   				</div>
+   				<div class="col-md-3">
+   					<P>
+   						<h2> infos</h2>
+   						<br> confort
+   						<br> fiabilite
+   						<br> satisfaction
+   					</P>
+   				</div>
+
+
+			</article>
+   			<article class="row modif">
+   				<div class="col-md-3">
+   					<h1> HELLO WORLD </h1>
+   				</div>
+   				<div class="col-md-3">
+   					<h1>  </h1>
+   				</div>
+   				<div class="col-md-3">
+   					<h1> HELLO WORLD </h1>
+   				</div>
+   				<div class="col-md-3">
+   					<h1> HELLO WORLD </h1></div>
+
+
+
+
+   			</article>
+   		</section>
+   		<section class="row section3">
+   			<div class="col-md-6">
+   				<b> BIENVENUE</b>
+   			</div>
+   			<div class="col-md-6">
+   				<b> BIENVENUE</b>
+   			</div>
+
+   		</section> -->
+   	</section>
+   	<footer class="container-fluid footer" >
+   		<!-- <section class="row pied1">
+   			<div class="col-md-3">infoA</div>
+   			<div class="col-md-3">infoB</div>
+   			<div class="col-md-3">infoC</div>
+   			<div class="col-md-3">infoD</div>
+
+   		</section> -->
+   		<section class="row pied2">
+   			<address> chimenekouomogne@yahoo.com</address>
+   		</section>
+   	</footer>
+
+      <script type="text/javascript" src="{% static 'js/jquery-slim.min.js' %}"></script>
+      <script type="text/javascript" src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+      <script type="text/javascript" src="{% static 'js/jquery.mobile-1.4.5.js' %}"></script>
+      <script language="JAVASCRIPT" src="{% static 'js/bootstrap.min.js' %}"></script>   
+   </body>
+</html>

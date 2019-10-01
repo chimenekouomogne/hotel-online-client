@@ -1,0 +1,69 @@
+{% extends "hotel/blankHotel.html" %}
+
+{% block centre %}
+  Quelques chambres
+ <br>
+
+<ol>
+	{% for elt in chambre %}
+	<!-- <li>{{ elt.code }} à : <b> {{ elt.hotel.nom }} </b> </li>
+	<img src="{{ MEDIA_URL }}{{ elt.photo }}"/>
+	<br>
+ -->
+	<li>
+		<div class="card text-black modif2 mb-3" style="margin:20px;;">
+			<div class="row no-gutters">
+				<div class="col-md-4">
+					<img src="{{ MEDIA_URL }}{{ elt.photo }}" class="card-img" alt="...">
+				</div>
+				<div class="col-md-4">
+					<div class="card-body">
+						<h5 class="card-title">{{ elt.code }} à : <b> {{ elt.hotel.nom }} </b> </h5>
+						<p class="card-text">
+							Catégorie: <b> {{ elt.categorie }}</b> <br>
+							Nuité: <b> {{elt.prix}}F </b> <br>
+						This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+						<p class="card-text">
+							<small class="text-muted"><a href="#">Resever cette chambre </a></small>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</li>  <br>    
+
+	{% endfor %}
+</ol>
+<div class="pagination">
+	<span class="step-links">
+		{% if chambre.has_previous %}
+		<a class="btn btn-info" href="?page={{ chambre.previous_page_number }}">previous</a>
+		{% endif %}
+		<span class="current">
+			Page {{ chambre.number }} of {{ paginator.num_pages }}.
+		</span>
+		{% if chambre.has_next %}
+		<a class="btn btn-info" href="?page={{ chambre.next_page_number }}">next</a>
+		{% endif %}
+	</span>
+</div>
+
+<!-- {% if forloop.counter|divisibleby:paginator_number %}
+	<div class="clearfix"></div>
+{% endif %} -->
+
+<!-- <div class="clearfix"></div>	
+<nav aria-label="page actuel">
+	<ul class="pager">
+		{% if chambre.has_previous %}
+		<li><a href="?page{{ chambre.previous_page_number}}">Précédent</a></li>
+		{% endif %}
+		{% if chambre.has_next %}
+		<li><a href="?page{{ chambre.next_page_number}}">suivant</a></li>
+		{% endif %}
+	</ul>
+</nav>
+
+ -->
+ 
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "layouts/parent.html" %}
+{% block title %} page index {% endblock %}
+{% block content %}
+<article>
+	{% for elt in registre %}
+		<h2>le niveau {{ elt.id }} de la filiere <a href="sonia"> {{ elt.filiere|upper }} </a> a pour effectif " {{ elt.effectif }} "</h2>
+		<p><a href="{% url 'main:donnees' %}">lire la suite</a>
+	{% endfor %}
+</article>	
+{% endblock %}

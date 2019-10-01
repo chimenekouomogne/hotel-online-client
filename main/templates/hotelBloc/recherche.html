@@ -1,0 +1,36 @@
+{% extends "hotel/blankHotel.html" %}
+
+{% block centre %}
+
+ <br>
+ <h3 style="color:green"> {{ titre }} </h3> 
+ <br> 
+
+{% if not query %}
+<b style="color:green"> Oulàlà! Bien que vous n'ayez entré aucun thème à chercher, voici quand meme quelques services dispos :</b>
+{% endif%}
+
+{% if services|length_is:"0" %}
+<b> Desolé aucune reponse trouvé !</b>
+<br> exemple de requete à reponse: restauration, hebergement, piscine et discotheque 
+
+{% endif%}
+{% for service in services %}
+ 	<h3> {{ service.typeService}} </h3>
+ 	{% for hot in service.hotel.all %}
+ 	  <p>{{ hot.nom }} </p>
+ 	{% endfor %}	
+ {% endfor%}
+
+<!--
+ {% if not query %}
+ 	{% for elt in service %}
+ 	<br> {{ elt.typeService}} : les hotels offrant ce service sont {{ elt.hotel.all}}
+ 	{% endfor%}
+ {% else %}
+ 	<p> en cours de recherche </p>	
+ {% endif %}	
+--> 
+
+{% endblock %}
+

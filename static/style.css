@@ -1,0 +1,112 @@
+p
+{
+	color: rgb(0,43,43);
+	text-align: center;
+	width: 350px;
+	
+	padding: 12px;
+	margin: 50px;
+}
+
+div
+{
+	color: rgb(0,83,83);
+	text-align: right;
+	background-color: rgb(232,255,255);
+}
+
+
+body
+{
+	background-color: rgb(204,214,215);
+}
+
+nav
+{
+	width: 740px;
+	display: inline-block;
+	float: left;
+	
+	text-align: right;
+}
+
+nav ul
+{
+	list-style-type: none;
+}
+nav li
+{
+	display: inline-block;
+	margin-right: 15px;
+}
+
+nav a
+{
+	font-size: 1.3em;
+	color: blue;
+	padding-bottom: 3px;
+	text-decoration: none;
+}
+nav a: hover
+{
+	color: #760001;
+	border-bottom: 3px solid #760001;
+}
+
+
+section
+{
+	display: inline-block;
+	border: 1px solid blue;
+	box-shadow: 0px 2px 5px #1c1a19;
+	border-radius: 5px;
+}
+
+
+article, aside
+{
+	display: inline-block;
+	vertical-align: top;
+	text-align: justify;
+}
+
+article
+{
+	width: 625px;
+	margin-right: 15px;
+}
+
+aside
+{
+	position: relative;
+	width: 235px;
+	background-color: #706b64;
+	box-shadow: 0px 2px 5px #1c1a19;
+	border-radius: 5px;
+	padding: 10px;
+	color: white;
+	font-size: 0.9em;
+}
+
+header
+{
+	width: 900px;
+	display: inline-block;
+	float: left;
+	border: 1px solid black;
+	text-align: right;
+
+	border-radius: 5px;
+	background-color: white
+	height: 235px;
+	box-shadow: 0px 2px 5px;
+
+}
+
+
+footer
+{
+	box-shadow: 0px 2px 5px #1c1a19;
+	border-radius: 5px;
+	background-color: white;
+}
