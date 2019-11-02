@@ -3,13 +3,6 @@ from django.http import HttpResponse
 
 # ce module views n'existait pas donc je l'ai crée
 
-def parent(request):
-	return render(request, 'layouts/parent3.html')
-
-
-
-
-
 
 def blank(request):
 	return render(request, 'sb_admin/blank.html')
@@ -28,10 +21,5 @@ def personnel(request):
 
 
 	
-def soso(request):
-    return render(request, 'temple.html')
-
-def sony(request):
-    return render(request, 'petitDossier/petitemple.html')
 
 

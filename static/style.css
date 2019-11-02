@@ -110,3 +110,14 @@ footer
 	border-radius: 5px;
 	background-color: white;
 }
+
+
+#champ1
+{
+	display: block;
+}
+
+#champ2
+{
+	display: none
+}

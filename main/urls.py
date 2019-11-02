@@ -24,14 +24,9 @@ urlpatterns = [
     path("reservation", views.reservation, name='reservation'),
     path("historique",views.historique, name='historique'),
     path("hotels", views.differentsHotels, name='hotels'),
-    #path("hotels/(?p<page>\)", views.differentsHotels, name='hotels')
-    #path("hotels/<int:page>/", views.differentsHotels, name='hotels')
     path('contacts',views.contacts, name='contacts'),
     path('recherche',views.recherche, name='recherche'),
 
-    path("page",views.mapage,name='pagea'),
-    path("home",views.homepage,name="homepage"),
-    path('essai',views.experience,name='experience'),
-    path('donne',views.basedo, name='donnees'),
-    path('contact',views.contact, name='contact')
-]
+    ]
+
+    

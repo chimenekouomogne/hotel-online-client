@@ -124,3 +124,19 @@ article p
 	max-height: 200px;
 	
 }
+
+
+.champ1
+{
+	display: block;
+}
+
+.champ2
+{
+	display: none;
+}
+
+.roug
+{
+	color: red;
+}

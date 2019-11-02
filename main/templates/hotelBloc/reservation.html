@@ -8,11 +8,11 @@
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="nom"> votre nom </label>
-        <input type="text" placeholder="nom" class="form-control" name="nom">
+        <input type="text" placeholder="nom" class="form-control" name="nom" id="nom">
       </div>
       <div class="form-group col-md-6">
         <label for="email">Email address</label>
-        <input type="email" class="form-control" id="email" placeholder="name@example.com">
+        <input type="email" class="form-control" placeholder="name@example.com" id="email" name="email">
       </div>
     </div>
 
@@ -20,7 +20,7 @@
     <div class="form-row"><label for="champservice">Veuillez cocher ci-dessous les services sollicités : </label></div>
     <div class="form-row">      
       <div class="form-check col-md-3">
-        <input class="form-check-input" type="checkbox" id="gridCheck" checked="">
+        <input class="form-check-input" type="checkbox" id="coche1" checked="" name="coche1">
         <label class="form-check-label" for="gridCheck">
          Hebergement
       </div>
@@ -30,8 +30,8 @@
          Restauration
       </div>
        <div class="form-check col-md-3">
-        <input class="form-check-input" type="checkbox" id="gridCheck">
-        <label class="form-check-label" for="gridCheck">
+        <input class="form-check-input" type="checkbox" id="cochePiscine">
+        <label class="form-check-label" for="cochePiscine">
          Piscine
       </div>
       <div class="form-check col-md-3">
@@ -46,16 +46,16 @@
     <fieldset>
       <div class="form-row">
         <div class="form-group col-md-4">
-        <label for="nom"> code de chambre</label>
-        <input type="text" placeholder="code" class="form-control" name="nom">
+        <label for="codechambre"> code de chambre</label>
+        <input type="text" placeholder="code" class="form-control" name="codechambre" id="codechambre">
       </div>
       <div class="form-group col-md-4">
-        <label for="nom"> prix horaire </label>
-        <input type="text" placeholder="prix" class="form-control" name="nom">
+        <label for="prixchambre"> prix horaire </label>
+        <input type="text" placeholder="prix" class="form-control" name="prixchambre" id="prixchambre">
       </div>
       <div class="form-group col-md-4">
-        <label for="nom"> Durée </label>
-        <select class="form-control" id="Duree">
+        <label for="Dureechambre"> Durée </label>
+        <select class="form-control" id="Dureechambre" name="Dureechambre">
       <option>Horaire</option>
       <option>Nuité</option>
       <option>semaine</option>
@@ -65,7 +65,7 @@
       </div>
     </fieldset>
 
-    <fieldset disabled="">
+    <fieldset id="champ2" >
       <div class="form-row">
         <div class="form-group col-md-4">
           <label for="nom"> code piscine</label>
@@ -77,7 +77,7 @@
         </div>
         <div class="form-group col-md-4">
           <label for="nom"> Durée </label>
-          <select class="form-control" id="Duree">
+          <select class="form-control" id="Duree" >
             <option>Horaire</option>
             <option>jour</option>
             <option>semaine</option>
@@ -87,7 +87,7 @@
       </div>
     </fieldset>
 
-    <fieldset disabled="">
+    <fieldset id="champ3">
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="nom"> type menu </label>
@@ -103,19 +103,26 @@
         </div>
       </div>
     </fieldset>
+
+    <input type="hidden" value=""  class="form-control hidden" name="cacher">
     
     <button class="btn btn-info" type="submit">Valider</button>
 
+    <button id="cochePiscine2">text</button>
   </div>
 
 
    <div>
      
-   </div>
-  
-   
+   </div>    
     
-  </form>      
+  </form> 
+
+  <!-- <script type="text/javascript">
+    $( "#cochePiscine2" ).click(function() {
+      $( "#champ3" ).show( "slow" );
+    });
+  </script>     --> 
     <!-- <span class="input-group-btn">
         <button class="btn btn-info" type="submit">Valider</button>
        <a class="btn btn-info" href="{% url 'main:recherche' %}">rechercher</a> 

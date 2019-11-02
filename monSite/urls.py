@@ -27,10 +27,6 @@ urlpatterns = [
 
     path('ajouter_personnel', views.ajouterPersonnel,name='ajouterPersonnel'),
     path('personnel', views.personnel, name='personnel'),
-
-    path('parent', views.parent, name='parent3'),
-    path('sonia/',views.soso,name='soso'),
-    path('soniania/',views.sony,name='sony'),# ligne ajouté
     path('admin/', admin.site.urls),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)    # ligne ajouté pour pouvoir utiliser les fichiers ds media
